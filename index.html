@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Basic Reset & Typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+      background-size: 200% 200%;
+      animation: gradientShift 10s ease infinite;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .tabs a {
+      text-decoration: none;
+      color: #333;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      font-weight: 500;
+    }
+    .tabs a:hover {
+      border-color: #333;
+    }
+    .tabs a.active {
+      border-color: #333;
+      font-weight: 600;
+    }
+    
+    /* Two-Column Layout */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .column {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    /* Section Titles */
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    /* Forms & Inputs */
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #555;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 20px 0;
+    }
+    
+    /* Save Button */
+    .save-btn {
+      background-color: #4f46e5;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: block;
+      margin: 20px auto 0;
+    }
+    .save-btn:hover {
+      background-color: #4338ca;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Performance</a>
+      <a href="#">Support</a>
+      <a href="#">Users</a>
+      <a href="#">Account</a>
+    </div>
+    
+    <div class="row">
+      <!-- Left Column: Edit Profile -->
+      <div class="column">
+        <h2>Edit Profile</h2>
+        <hr>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Johnny Doe">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="johnny.doe@example.com">
+      </div>
+      
+      <!-- Right Column: Change Password -->
+      <div class="column">
+        <h2>Change Password</h2>
+        <hr>
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword" placeholder="********">
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" placeholder="********">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="********">
+      </div>
+    </div>
+    
+    <button class="save-btn" id="saveBtn">Save</button>
+  </div>
+  
+  <script>
+    document.getElementById('saveBtn').addEventListener('click', function() {
+      alert('Settings saved (demo only).');
+    });
+  </script>
+</body>
+</html>
